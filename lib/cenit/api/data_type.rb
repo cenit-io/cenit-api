@@ -21,7 +21,7 @@ module Cenit
       end
 
       def count
-        if (response = get).code == 200
+        if (response = get(query: { only: :id })).code == 200
           response['count']
         else
           nil
